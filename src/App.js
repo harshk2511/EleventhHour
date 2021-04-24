@@ -12,6 +12,7 @@ import Files from './MostSearchedItems/Pages/Files';
 import MainNavigation from './Shared/Components/Navigation/MainNavigation';
 import { AuthContext } from './Shared/Components/Context/auth-context';
 import BranchWise from './MostSearchedItems/Pages/BranchWise';
+import UploadPage from './UploadPage/UploadPage';
 import About from './About/About';
 
 const App = () => {
@@ -41,6 +42,11 @@ const App = () => {
         <Route path="/branch/:branch" exact>
           <BranchesBar />
           <BranchWise />
+          <MessagesBar />
+        </Route>
+        <Route path="/upload" exact>
+        <BranchesBar />
+          <UploadPage />
           <MessagesBar />
         </Route>
         <Redirect to="/" />
