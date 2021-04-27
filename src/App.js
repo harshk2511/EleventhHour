@@ -12,8 +12,8 @@ import Files from './MostSearchedItems/Pages/Files';
 import MainNavigation from './Shared/Components/Navigation/MainNavigation';
 import { AuthContext } from './Shared/Components/Context/auth-context';
 import BranchWise from './MostSearchedItems/Pages/BranchWise';
-import UploadPage from './UploadPage/UploadPage';
 import About from './About/About';
+import Upload from './UploadPage/Upload';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -39,15 +39,18 @@ const App = () => {
         <Route path="/about" exact>
           <About />
         </Route>
+        <Route path="/upload" exact>
+          <Upload />
+        </Route>
         <Route path="/branch/:branch" exact>
           <BranchesBar />
           <BranchWise />
           <MessagesBar />
         </Route>
-        <Route path="/upload" exact>
-        <BranchesBar />
-          <UploadPage />
-          <MessagesBar />
+        <Route path="/up1">
+          <BranchesBar />
+          <Files />
+          <BranchesBar />
         </Route>
         <Redirect to="/" />
       </Switch>
@@ -65,6 +68,9 @@ const App = () => {
         </Route>
         <Route path="/about" exact>
           <About />
+        </Route>
+        <Route path="/upload" exact>
+          <Upload />
         </Route>
         <Route path="/branch/:branch" exact>
           <BranchesBar />
